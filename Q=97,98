@@ -1,0 +1,57 @@
+code=97
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char name[100];
+    fgets(name, sizeof(name), stdin);  // Read full name with spaces
+
+    int n = strlen(name);
+    if(name[n-1] == '\n') name[n-1] = '\0'; // Remove trailing newline if any
+    if(n > 0) {
+        printf("%c.", name[0]);
+    }
+    for(int i = 0; i < n; i++) {
+        if(name[i] == ' ' && name[i+1] != '\0') {
+            printf("%c.", name[i+1]);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+code=98
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[100];
+    fgets(name, sizeof(name), stdin);  // Read full name with spaces
+
+    int n = strlen(name);
+    if(name[n-1] == '\n') name[n-1] = '\0'; // Remove trailing newline
+
+    // Find the last space in the string (to get surname)
+    int lastSpace = -1;
+    for(int i = 0; i < n; i++) {
+        if(name[i] == ' ')
+            lastSpace = i;
+    }
+
+    // Print initials for first and middle names
+    if(lastSpace != -1) {
+        printf("%c.", name[0]); // First initial
+        for(int i = 0; i < lastSpace; i++) {
+            if(name[i] == ' ' && name[i+1] != ' ')
+                printf("%c.", name[i+1]);
+        }
+
+        // Print surname
+        printf(" %s\n", &name[lastSpace + 1]);
+    } else {
+        // If there is only one name, print it as is
+        printf("%s\n", name);
+    }
+
+    return 0;
+}
+
+
