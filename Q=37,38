@@ -1,0 +1,42 @@
+code=37
+#include <stdio.h>
+
+int main() {
+    int a, b, i, lcm;
+
+    // Input two numbers
+    scanf("%d %d", &a, &b);
+
+    // Find LCM using the formula: LCM × HCF = a × b
+    int num1 = a, num2 = b;
+
+    // Find HCF first
+    while(a != b) {
+        if(a > b)
+            a -= b;
+        else
+            b -= a;
+    }int hcf = a;  // or b (both are same now)
+    lcm = (num1 * num2) / hcf;
+    printf("%d", lcm);
+
+    return 0;
+}
+code=38
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+    scanf("%d", &n);
+
+    if (n < 0) n = -n; // handle negative numbers
+
+    while (n != 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    printf("%d", sum);
+
+    return 0;
+}
