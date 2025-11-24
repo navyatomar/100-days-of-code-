@@ -1,0 +1,32 @@
+code=3
+# programme-to-write-area-and-circumfrence-of-circle
+```c
+#include <stdio.h>
+
+int main() {
+    int length, breadth;
+    scanf("%d %d", &length, &breadth);
+
+    int area = length * breadth;
+    int perimeter = 2 * (length + breadth);
+
+    printf("Area=%d, Perimeter=%d", area, perimeter);
+
+    return 0;
+}
+
+```
+code=4
+#include <stdio.h>
+
+int main() {
+    float r;
+    scanf("%f", &r);
+
+    float area = 3.14 * r * r;
+    float circumference = 2 * 3.14 * r;
+
+    printf("Area=%.2f, Circumference=%.2f", area, circumference);
+
+    return 0;
+}
