@@ -1,0 +1,38 @@
+code=27
+#include <stdio.h>
+
+int main() {
+    int n, i, sum = 0;
+    
+    // Input number of odd terms
+    scanf("%d", &n);
+    
+    // Calculate sum of first n odd numbers
+    for(i = 1; i <= n; i++) {
+        sum += (2 * i - 1);
+    }
+    
+    // Print the result
+    printf("%d\n", sum);
+    
+    return 0;
+}
+code=28
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int product = 1;
+    for (int i = 2; i <= n; i += 2) {
+        product *= i;
+    }
+
+    // If n < 2, no even numbers, product should be 0
+    if (n < 2) product = 0;
+
+    printf("%d", product);
+
+    return 0;
+}
