@@ -1,0 +1,26 @@
+first q 81 and then q 82 at last
+Q=81:
+#include <stdio.h>
+int main() {
+    char str[100];
+    int count = 0;
+    gets(str);  // or use fgets(str, sizeof(str), stdin);
+    while (str[count] != '\0') {
+        count++;
+    }
+    printf("%d", count);
+    return 0;
+}
+Q=82:
+#include <stdio.h>
+int main() {
+    char str[100];
+    int i = 0;
+    gets(str);  // or use fgets(str, sizeof(str), stdin);
+    while (str[i] != '\0') {
+        printf("%c\n", str[i]);
+        i++;
+    }
+    return 0;
+}
+
