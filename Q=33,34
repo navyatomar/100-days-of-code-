@@ -1,0 +1,45 @@
+code=33
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, original, sum = 0;
+    scanf("%d", &n);
+
+    original = n;
+
+    while (n != 0) {
+        int digit = n % 10;
+        sum += pow(digit, 3);  // cube of the digit
+        n /= 10;
+    }
+
+    if (sum == original)
+        printf("Armstrong");
+    else
+        printf("Not Armstrong");
+return 0;
+}
+code=34
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, isPrime = 1;
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        isPrime = 0;
+    } else {
+        for (int i = 2; i <= sqrt(n); i++) {
+            if (n % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+}if (isPrime)
+        printf("Prime");
+    else
+        printf("Not prime");
+return 0;
+}
