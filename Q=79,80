@@ -1,0 +1,74 @@
+Q=79,80
+#include <stdio.h>
+int main() {
+    int n, m, i, j;
+    scanf("%d %d", &n, &m);
+    int matrix[n][m];
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < m; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }    for(int col = 0; col < m; col++) {
+        i = 0;
+        j = col;
+        while(i < n && j >= 0) {
+            printf("%d ", matrix[i][j]);
+            i++;
+            j--;
+        }
+    }
+    for(int row = 1; row < n; row++) {
+        i = row;
+        j = m - 1;
+        while(i < n && j >= 0) {
+            printf("%d ", matrix[i][j]);
+            i++;
+            j--;
+        }
+    }
+    printf("\n");
+    return 0;
+}
+Code=80
+#include <stdio.h>
+int main() {
+    int r1, c1, r2, c2, i, j, k;
+    scanf("%d %d", &r1, &c1);
+    int a[r1][c1];
+    for(i = 0; i < r1; i++) {
+        for(j = 0; j < c1; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    scanf("%d %d", &r2, &c2);
+    int b[r2][c2];
+    for(i = 0; i < r2; i++) {
+        for(j = 0; j < c2; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+    if(c1 != r2) {
+        printf("Matrix multiplication not possible\n");
+        return 0;}
+    int result[r1][c2];
+    for(i = 0; i < r1; i++) {
+        for(j = 0; j < c2; j++) {
+            result[i][j] = 0;
+        }
+    }
+    for(i = 0; i < r1; i++) {
+        for(j = 0; j < c2; j++) {
+            for(k = 0; k < c1; k++) {
+                result[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+    for(i = 0; i < r1; i++) {
+        for(j = 0; j < c2; j++) {
+            printf("%d ", result[i][j]);
+        }printf("\n");
+    }
+    return 0;
+}
+
+
