@@ -1,0 +1,47 @@
+code=17
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c;
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    double D = b*b - 4*a*c;
+
+    if (D > 0) {
+        double r1 = (-b + sqrt(D)) / (2*a);
+        double r2 = (-b - sqrt(D)) / (2*a);
+        printf("Roots are real and different: %.0lf, %.0lf", r1, r2);
+    }
+    else if (D == 0) {
+        double r = -b / (2*a);
+        printf("Roots are real and same: %.0lf", r);
+    }
+    else {
+        printf("Roots are complex");
+    }
+
+    return 0;
+}
+code=18
+#include <stdio.h>
+
+int main() {
+    int percent;
+    scanf("%d", &percent);
+
+    if (percent >= 90 && percent <= 100)
+        printf("Grade A");
+    else if (percent >= 80 && percent <= 89)
+        printf("Grade B");
+    else if (percent >= 70 && percent <= 79)
+        printf("Grade C");
+    else if (percent >= 60 && percent <= 69)
+        printf("Grade D");
+    else
+        printf("Grade F");
+
+    return 0;
+}
+
+
