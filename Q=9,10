@@ -1,0 +1,33 @@
+code=9
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double P, R, T;
+    scanf("%lf %lf %lf", &P, &R, &T);
+
+    // Simple Interest
+    double SI = (P * R * T) / 100;
+
+    // Compound Interest
+    double CI = P * pow(1 + R/100, T) - P;
+
+    printf("Simple Interest=%.2lf, Compound Interest=%.2lf", SI, CI);
+
+    return 0;
+}
+code-10
+#include <stdio.h>
+
+int main() {
+    int sec;
+    scanf("%d", &sec);
+
+    int hours = sec / 3600;
+    int minutes = (sec % 3600) / 60;
+    int seconds = sec % 60;
+
+    printf("%d:%d:%d", hours, minutes, seconds);
+
+    return 0;
+}
