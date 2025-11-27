@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+int lengthOfLongestSubstring(char s[]) {
+    int freq[256] = {0};
+    int left = 0, maxLen = 0;
+
+    for (int right = 0; s[right] != '\0'; right++) {
+        freq[(int)s[right]]++;
+        while (freq[(int)s[right]] > 1) {
+            freq[(int)s[left]]--;
+            left++;
+        }
+        int windowLen = right - left + 1;
+        if (windowLen > maxLen)
+            maxLen = windowLen;
+    }
+    return maxLen;
+}
+int main() {
+    char s[1000];
+    scanf("%s", s);
+    printf("%d\n", lengthOfLongestSubstring(s));
+    return 0;
+}
