@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    // Define enum for months
+    enum Months { JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC };
+
+    enum Months month;
+
+    // Example: let's print for FEB
+    month = FEB;
+
+    switch(month) {
+        case JAN:
+            printf("JAN: 31 days\n");
+            break;
+        case FEB:
+            printf("FEB: 28 or 29 days\n");
+            break;
+        case MAR:
+            printf("MAR: 31 days\n");
+            break;
+        case APR:
+            printf("APR: 30 days\n");
+            break;
+        case MAY:
+            printf("MAY: 31 days\n");
+            break;
+        case JUN:
+            printf("JUN: 30 days\n");
+            break;
+        case JUL:
+            printf("JUL: 31 days\n");
+            break;
+        case AUG:
+            printf("AUG: 31 days\n");
+            break;
+        case SEP:
+            printf("SEP: 30 days\n");
+            break;
+        case OCT:
+            printf("OCT: 31 days\n");
+            break;
+        case NOV:
+            printf("NOV: 30 days\n");
+            break;
+        case DEC:
+            printf("DEC: 31 days\n");
+            break;
+        default:
+            printf("Invalid month\n");
+    }
+
+    return 0;
+}
