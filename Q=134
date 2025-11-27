@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    // Define enum for status
+    enum Status { SUCCESS, FAILURE, TIMEOUT };
+
+    enum Status opStatus;
+
+    // Example: set status to FAILURE
+    opStatus = FAILURE;
+
+    // Print message based on enum value
+    switch(opStatus) {
+        case SUCCESS:
+            printf("Operation successful\n");
+            break;
+        case FAILURE:
+            printf("Operation failed\n");
+            break;
+        case TIMEOUT:
+            printf("Operation timed out\n");
+            break;
+        default:
+            printf("Unknown status\n");
+    }
+
+    return 0;
+}
