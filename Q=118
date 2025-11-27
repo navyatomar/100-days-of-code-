@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int nums[] = {0, 3, 2, 4};
+    int n = sizeof(nums) / sizeof(nums[0]); // size of array
+    int total = (n * (n + 1)) / 2; // sum of 0..n
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        sum += nums[i];
+    }
+
+    int missing = total - sum;
+    printf("%d\n", missing);
+
+    return 0;
+}
