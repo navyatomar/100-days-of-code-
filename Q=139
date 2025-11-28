@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    // Define enum for status
+    enum Status { SUCCESS, FAILURE, TIMEOUT };
+
+    // Print enum names and their integer values
+    printf("SUCCESS = %d, FAILURE = %d, TIMEOUT = %d\n", SUCCESS, FAILURE, TIMEOUT);
+
+    return 0;
+}
