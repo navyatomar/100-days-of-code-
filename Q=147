@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Employee {
+    char name[50];
+    int id;
+    float salary;
+};
+
+int main() {
+    struct Employee emp;
+    FILE *fptr;
+    printf("Enter employee name: ");
+    scanf("%s", emp.name);
+    printf("Enter employee ID: ");
+    scanf("%d", &emp.id);
+    printf("Enter employee salary: ");
+    scanf("%f", &emp.salary);
+    fptr = fopen("employee.dat", "wb");
+    if (fptr == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+    fwrite(&emp, sizeof(struct Employee), 1, fptr);
+    fclose(fptr);
+    printf("Employee data stored successfully in employee.dat\n");
+    fptr = fopen("employee.dat", "rb");
+    if (fptr == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+    fread(&emp, sizeof(struct Employee), 1, fptr);
+    fclose(fptr);
+    printf("\nEmployee details read from file:\n");
+    printf("Name: %s | ID: %d | Salary: %.2f\n", emp.name, emp.id, emp.salary);
+
+    return 0;
+}
